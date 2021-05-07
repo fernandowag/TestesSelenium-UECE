@@ -1,0 +1,35 @@
+﻿@model CartaoViagemWeb.Models.Login
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="text-center">
+
+    <!--FORMULÁRIO DE LOGIN-->
+    <div id="login" class="content">
+        <form method="post" asp-controller="Home" asp-action="TelaInicial">
+            <h1>Login</h1><br />
+                          <p>
+                              <label for="nome_login">Usuário</label>
+                              @Html.EditorFor(model => model.Usuario, 
+                                                        new { 
+                                                              htmlAttributes = new {
+                                                                                     @id = "nome_login",
+                                                                                     @name = "nome_login", 
+                                                                                     @required = "required", 
+                                                                                     @type = "text", 
+                                                                                     @placeholder = "ex. Francisco"
+                                                                                   }
+                                                           }
+                                              )
+                           </p>
+            <p>
+                <label for="senha_login">Senha</label>
+                <input id="senha_login" name="senha_login" required="required" type="password" placeholder="ex. 1234" />
+            </p>
+            <p>
+                <input type="submit" value="Logar" />
+            </p>
+        </form>
+    </div>
+</div>
